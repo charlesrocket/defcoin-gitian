@@ -2,7 +2,7 @@
 - name: Download Defcoin developer public keys from website.
   become: yes
   get_url:
-    url: "https://z.cash/gpg-pubkeys/{{ item.name }}.asc"
+    url: "https://raw.githubusercontent.com/charlesrocket/defcoin-gitian.sigs/master/{{ item.name }}.asc"
     dest: "/tmp/{{ item.id }}.asc"
     owner: "{{ gitian_user }}"
     group: "{{ gitian_user }}"
