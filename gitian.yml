@@ -1,0 +1,16 @@
+---
+- name: Apply the Defcoin Gitian builder role.
+  become: yes
+  hosts: localhost:defcoin-build
+  vars:
+    defcoin_git_repo_url: "{{ lookup('env','DEFCOIN_GIT_REPO_URL') }}"
+    defcoin_version: "{{ lookup('env','DEFCOIN_VERSION') }}"
+    git_name: "{{ lookup('env','GIT_NAME') }}"
+    git_email: "{{ lookup('env','GIT_EMAIL') }}"
+    gpg_key_name: "{{ lookup('env','GPG_KEY_NAME') }}"
+    gpg_key_id: "{{ lookup('env','GPG_KEY_ID') }}"
+  roles:
+    - role: common
+      tags: common
+    - role: gitian
+      tags: gitian

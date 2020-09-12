@@ -1,0 +1,8 @@
+.env
+.envrc
+.vagrant/*
+*.swp
+gitian.sigs/*
+local/*
+!local/README.md
+defcoin-binaries/*

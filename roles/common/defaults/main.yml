@@ -1,0 +1,19 @@
+---
+defcoin_swapfile_size: 1G
+defcoin_vm_swappiness: 1
+defcoin_common_packages:
+  - apt-show-versions
+  - apt-transport-https
+  - curl
+  - git-core
+  - haveged
+  - htop
+  - ntp
+  - ntpdate
+  - python-pip
+  - rsync
+  - screen
+  - sudo
+  - tmux
+  - tree
+  - vim
