@@ -203,6 +203,18 @@
     group: "{{ gitian_user }}"
     mode: "0755"
   tags: script
+  
+- name: Ensure group "docker" exists
+  group:
+    name: docker
+    state: present
+    system: yes
+
+- name: Execute Docker without sudo
+  shell: sh -c "sudo usermod -aG docker vagrant"
+  become: yes
+  become_user: vagrant
+  become_method: sudo
 
 - name: Clean the apt cache to free up space.
   apt:
